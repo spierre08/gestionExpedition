@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Pannel d'administration</title>
+      <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+      <section>
+            <div class="sliderBar">
+                  <div class="slider-title">
+                        <h1>GExpédition</h1>
+                        <span><%= email %></span>
+                  </div>
+                  <hr>
+                  <div class="sliderElement">
+                        <ul>
+                              <li><a href="/interface">Clients</a></li>
+                              <li><a href="/interface/commande" class="active">Commandes</a></li>
+                              <li><a href="#">Expéditions</a></li>
+                              <li><a href="#">Transporteur</a></li>
+                        </ul>
+                  </div>
+            </div>
+      </section>
+      
+      <section>
+            <div class="main">
+                  <header>
+                        <div class="menu-element">
+                              <div class="menu"></div>
+                              <div class="menu1"></div>
+                        </div>
+                        <div class="btn-group">
+                              <a href="/deconnexion">Déconnexion</a>
+                        </div>
+                  </header>
+                  <div class="main-container">
+                        <div class="main-table">
+                              <form class="form" action="/interface/commande/editer/<%= commande.id %>" method="POST">
+                                    <h3>Nouvelle commande</h3>
+                                    <label for="">Référence</label>
+                                    <input type="text" id="" value="<%= commande.reference_commande %>"  required disabled>
+                                    <label for="">Staut de commande actuelle</label>
+                                    <input type="text" id="" value="<%= commande.statut %>"  required disabled>
+                                    <label for="">Modifier le statut de commande</label>
+                                    <select name="statut" id="">
+                                          <option value="En attente">En attente</option>
+                                          <option value="En cours">En cours</option>
+                                          <option value="Validée">Validée</option>
+                                          <option value="Annulée">Annulée</option>
+                                    </select>
+                                    <input type="submit" value="Modifier">
+                                    <a href="/interface/commande">Retour</a>
+                              </form>
+                        </div>
+                  </div>
+                
+            </div>
+      </section>
+
+      <script src="/js/script.js"></script>
+</body>
+</html>

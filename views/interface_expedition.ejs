@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Pannel d'administration</title>
+      <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+      <section>
+            <div class="sliderBar">
+                  <div class="slider-title">
+                        <h1>GExpédition</h1>
+                        <span><%= email %></span>
+                  </div>
+                  <hr>
+                  <div class="sliderElement">
+                        <ul>
+                                <li><a href="/interface">Clients</a></li>
+                                <li><a href="/interface/commande" >Commandes</a></li>
+                                <li><a href="/interface/expedition" class="active">Expéditions</a></li>
+                                <li><a href="#">Transporteur</a></li>
+                        </ul>
+                  </div>
+            </div>
+      </section>
+      
+      <section>
+            <div class="main">
+                  <header>
+                        <div class="menu-element">
+                              <div class="menu"></div>
+                              <div class="menu1"></div>
+                        </div>
+                        <div class="btn-group">
+                              <a href="/deconnexion">Déconnexion</a>
+                        </div>
+                  </header>
+                  <div class="main-container">
+                        <div class="main-container-element">
+                              <div class="main-container-print">
+                                    <a href="#">Rechercher</a>
+                              </div>
+                              <div class="main-container-element-btnAdd">
+                                    <a href="/interface/expedition/ajout">Ajouter</a>
+                              </div>
+                        </div>
+                        <div class="main-table">
+                              <div class="main-table-responsive">
+                                    <table>
+                                          <thead>
+                                                <tr>
+                                                      <th>N° de suivi</th>
+                                                      <th>Référence commande</th>
+                                                      <th>Transporteur</th>
+                                                      <th>Statut d'expédition</th>
+                                                      <th>Date</th>
+                                                      <th>Action</th>
+                                                </tr>
+                                          </thead>
+                                          <% if (row.length > 0){ %>
+                                          <tbody>
+                                                <% for(let i=0; i<row.length; i++){ %>
+                                                <tr>
+                                                      <td><%= row[i].numero_suivi %></td>
+                                                      <td><%= row[i].reference_commande %></td>
+                                                      <td><%= row[i].nom %></td>
+                                                      <td><%= row[i].statuteE %></td>
+                                                      <td><%= row[i].date_expedition.toLocaleDateString() %></td>
+                                                      <td>
+                                                            <a href="/interface/expedition/editer/<%= row[i].id %>" >Editer</a>
+                                                      </td>
+                                                </tr>
+                                                <% } %>
+                                          </tbody>
+                                          <% }else{ %>
+                                                <p>Aucun résultat</p>
+                                          <% } %>
+                                    </table>
+                              </div>
+                        </div>
+                  </div>
+            </div>
+      </section>
+
+      <script src="/js/script.js"></script>
+</body>
+</html>

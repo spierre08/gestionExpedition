@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Pannel d'administration</title>
+      <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+      <section>
+            <div class="sliderBar">
+                  <div class="slider-title">
+                        <h1>GExpédition</h1>
+                        <span><%= email %></span>
+                  </div>
+                  <hr>
+                  <div class="sliderElement">
+                        <ul>
+                              <li><a href="/interface" class="active">Clients</a></li>
+                              <li><a href="/interface/commande">Commandes</a></li>
+                              <li><a href="/interface/expedition">Expéditions</a></li>
+                              <li><a href="#">Transporteur</a></li>
+                        </ul>
+                  </div>
+            </div>
+      </section>
+      
+      <section>
+            <div class="main">
+                  <header>
+                        <div class="menu-element">
+                              <div class="menu"></div>
+                              <div class="menu1"></div>
+                        </div>
+                        <div class="btn-group">
+                              <a href="/deconnexion">Déconnexion</a>
+                        </div>
+                  </header>
+                  <div class="main-container">
+                        <div class="main-table">
+                              <form class="form" action="/interface/ajout" method="POST">
+                                    <% if (erreur_client){ %>
+                                          <p class="error"><%= erreur_client %></p>
+                                    <% } %>
+                                    <% if (succes_client){ %>
+                                          <p class="succes"><%= succes_client %></p>
+                                    <% } %>
+                                    <h3>Nouveau client</h3>
+                                    <input type="text" name="nom" id="" placeholder="Nom et prénom">
+                                    <input type="tel" name="tel" id="" placeholder="Numéro de téléphone">
+                                    <input type="email" name="email" id="" placeholder="Email">
+                                    <input type="text" name="adresse" id="" placeholder="Adresse ou ville">
+                                    <input type="submit" value="Ajouter">
+                              </form>
+                        </div>
+                  </div>
+                
+            </div>
+      </section>
+
+      <script src="/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,549 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+*{
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+      font-family: nunito, sans-serif;
+}
+/* ======= Slide bar ========= */
+.sliderBar{
+      position:fixed;
+      width: 260px;
+      height: 100%;
+      background: black;
+      transition: 0.5s;
+}
+.sliderBar.slideActive{
+      left: -400px;
+      transition: 0.5s;
+}
+.sliderBar .slider-title {
+      padding: 20px;
+}
+.sliderBar .slider-title h1{
+      color:  #fff;
+      font-weight: 800;
+}
+.sliderBar .slider-title span{
+      color: #fff;
+      font-size: 12px;
+}
+.sliderElement{
+      width: 260px;
+      margin-left: 10px;
+      padding-top: 10px;
+      line-height: 40px;
+}
+.sliderElement ul li{
+      list-style: none;
+      margin: 8px;
+}
+.sliderElement ul li a{
+      text-decoration: none;
+      padding: 4px 8px;
+      color: #fff;
+      font-size: 18px;
+      transition: 0.5s;
+}
+.sliderElement ul li a:hover{
+      font-weight: 800;
+}
+.active{
+      font-weight: 800;
+}
+/* =========== Main ========= */
+.main{
+      /* position: absolute; */
+      height: 100%;
+      width: 81%;
+      margin-left: 258px;
+      transition: 0.5s;
+}
+.main.mainResponsive{
+      margin-left: 0;
+      width: 100%;
+      transition: 0.5s;
+}
+.main header{
+      width: 100%;
+      height: 92px;
+      background: black;
+      padding: 10px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+}
+.main header form{
+      display: flex;
+      justify-content: space-around;
+}
+.menu-element .menu{
+      height: 40px;
+      width: 40px;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      position: relative;
+      border-radius: 50%;
+      cursor: pointer;
+      margin-left: 30px;
+}
+.menu-element .menu::before{
+      content: "";
+      position: absolute;
+      height: 4px;
+      width: 26px;
+      box-shadow: 0 10px 0 black;
+      background: black;
+      border-radius: 6px;
+      translate:0 -10px;
+}
+.menu-element .menu::after{
+      content: "";
+      position: absolute;
+      height: 4px;
+      width: 26px;
+      background: black;
+      border-radius: 6px;
+      translate:0 10px;
+}
+.main form input{
+      padding: 10px 15px;
+      width: 400px;
+      outline: none;
+      margin: 8px;
+}
+.main form button{
+      padding: 10px 15px;
+      background: green;
+      outline: none;
+      border: 1px solid green;
+      color: #fff;
+      font-weight: 800;
+      transition: 0.5s;
+}
+.main form button:hover{
+      background: rgb(11, 87, 11);
+}
+.btn-group a{
+      text-decoration: none;
+      padding: 10px 15px;
+      background: blue;
+      border: 1px solid blue;
+      color: #fff;
+      font-weight: 800;
+      transition: 0.5s;
+}
+.btn-group a:hover{
+      background: rgb(11, 40, 87);
+}
+.main-container{
+      width: 100%;
+      height: 80%;
+}
+.main-container-element{
+      margin-top: 30px;
+      display: flex;
+      justify-content: space-between;
+      padding: 5px 5%;
+}
+.box-element{
+      margin-top: 30px;
+      display: flex;
+      justify-content: space-between;
+      padding: 5px 5%;
+}
+.box1{
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+      line-height: 40px;
+      height: 100px;
+      width: 300px;
+      background:#fff;
+      box-shadow: 0 0 1px 1px  black;
+      border-radius: 2px;
+}
+.box1 h1{
+      font-size: 28px;
+}
+.box1 p{
+      font-size: 30px;
+}
+.box2{
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+      line-height: 40px;
+      height: 100px;
+      width: 300px;
+      background:#fff;
+      box-shadow: 0 0 1px 1px  black;
+      border-radius: 2px;
+}
+.box2 h1{
+      font-size: 28px;
+}
+.box2 p{
+      font-size: 30px;
+}
+.box3{
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+      line-height: 40px;
+      height: 100px;
+      width: 300px;
+      background:#fff;
+      box-shadow: 0 0 1px 1px  black;
+      border-radius: 2px;
+}
+.box3 h1{
+      font-size: 28px;
+}
+.box3 p{
+      font-size: 30px;
+}
+.main-container-print a{
+      text-decoration: none;
+      padding: 10px 15px;
+      background: black;
+      border: 1px solid black;
+      color: #fff;
+      font-weight: 800;
+      transition: 0.5s;
+}
+.main-container-print .form-add{
+      display: none;
+}
+.main-container-print a:hover{
+      background: rgb(73, 72, 72);
+}
+.main-container-element-btnAdd a{
+      text-decoration: none;
+      padding: 10px 15px;
+      color: #fff;
+      background: green;
+      outline: none;
+      border: 1px solid green;
+      font-weight: 800;
+      transition: 0.5s;
+}
+.main-container-element-btnAdd a:hover{
+      background: rgb(11, 87, 11);
+}
+.main-table{
+      display: flex;
+      justify-content: space-between;
+      padding: 5px 5%;
+}
+.main-table-responsive{
+      margin-top: 8px;
+      width: 100%;
+      height: 400px;
+      min-height: 400px;
+      overflow:auto;
+}
+.main-table-responsive table{
+      border: 1px solid black;
+      width: 100%;
+}
+.main-table-responsive table thead{
+      background: black;
+      color: #fff;
+}
+.main-table-responsive table tbody tr td{
+      border-bottom: 1px solid black;
+      text-align: center;
+      padding: 8px;
+}
+.main-table-responsive table tbody tr td a{
+      text-decoration: none;
+      padding: 5px;
+      font-style: italic;
+      font-weight: 800;
+}
+.main-table-responsive table tbody tr td a:first-child{
+      background: orange;
+      border: 1px solid orange;
+      padding: 4px;
+      color: #fff;
+      transition: 0.5s;
+}
+.main-table-responsive table tbody tr td a:first-child:hover{
+      background: rgb(255, 194, 82);
+}
+.main-table-responsive table tbody tr td a:last-child{
+      background: red;
+      border: 1px solid red;
+      padding: 4px;
+      color: #fff;
+      transition: 0.5s;
+}
+.main-table-responsive table tbody tr td a:last-child:hover{
+      background: rgb(239, 42, 7);
+}
+/* .main-table form{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+} */
+.form-element-search{
+      display: flex;
+}
+.form-element-search input[type="submit"]{
+      text-decoration: none;
+      padding: 8px 15px;
+      background: green;
+      border: 1px solid green;
+      color: #fff;
+      font-weight: 800;
+      transition: 0.5s;
+      width: 100px;
+}
+.form-element-search input[type="submit"]:hover{
+      background: rgba(15, 88, 15, 0.442);
+}
+.form{
+      display: flex;
+      flex-direction: column;
+}
+.form-element{
+      display: flex;
+      flex-direction: column;
+}
+.form-element label{
+      margin-left: 8px;
+}
+.form-element a{
+      margin-left: 8px;
+}
+.main-table form h3{
+      margin-left: 6px;
+}
+.main-table form input[type="submit"]{
+      background: green;
+      border: 1px solid green;
+      color: #fff;
+      font-weight: 800;
+      cursor: pointer;
+}
+.main-table form input[type="submit"]:hover{
+      background: rgb(11, 87, 11);
+}
+.main-table form select{
+      padding: 10px 15px;
+      width: 400px;
+      outline: none;
+      margin: 8px;
+}
+.error{
+      background: rgb(212, 12, 12);
+      text-align: center;
+      color: red;
+      font-weight: 800;
+      font-style: italic;
+      padding: 8px;
+}
+.succes{
+      background: rgb(5, 165, 53);
+      text-align: center;
+      color: green;
+      font-weight: 800;
+      font-style: italic;
+      padding: 8px;
+}
+/* ======== Media query ======= */
+@media screen and (max-width: 1200px){
+      .main header{
+            padding: 5% 18px;
+      }
+      .box-element{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+      }
+      .box1{
+            height: 100px;
+            width: 60%;
+            margin: 8px;
+      }
+      .box1 h1{
+            font-size: 24px;
+      }
+      .box1 p{
+            font-size: 24px;
+      }
+      .box2{
+            height: 100px;
+            width: 60%;
+            margin: 8px;
+      }
+      .box2 h1{
+            font-size: 24px;
+      }
+      .box2 p{
+            font-size: 24px;
+      }
+      .box3{
+            height: 100px;
+            width: 60%;
+            margin: 8px;
+      }
+      .box3 h1{
+            font-size: 24px;
+      }
+      .box3 p{
+            font-size: 24px;
+      }
+}
+@media screen and (max-width: 960px) {
+      /* ====== Slide Bar ===== */
+      .sliderBar{
+            display: none;
+            transition: 0.5s;
+            width: 350px;
+      }
+      .sliderBar.slideResponsive{
+            display: block;
+            /* left: 400px; */
+            transition: 0.5s;
+            z-index: 10;
+      }
+      /* ====== Main ===== */
+      .main{
+            width: 100%;
+            margin-left: 0;
+      }
+      .menu-element{
+            display: flex;
+            align-items: center;
+      }
+      .menu-element .menu{
+            display: none;
+      }
+      .menu-element .menu1{
+            height: 40px;
+            width: 40px;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            position: relative;
+            border-radius: 50%;
+            cursor: pointer;
+            margin-left: 30px;
+      }
+      .menu-element .menu1::before{
+            content: "";
+            position: absolute;
+            height: 4px;
+            width: 26px;
+            box-shadow: 0 10px 0 black;
+            background: black;
+            border-radius: 6px;
+            translate:0 -10px;
+      }
+      .menu-element .menu1::after{
+            content: "";
+            position: absolute;
+            height: 4px;
+            width: 26px;
+            background: black;
+            border-radius: 6px;
+            translate:0 10px;
+      }
+      .main form{
+            display: none;
+      }
+      .btn-group a{
+            padding: 7px 10px;
+            font-size: 13px;
+      }
+      .main-container-element{
+            display: flex;
+            align-items: center;
+      }
+      .main-container-print a{
+            display: none;
+      }
+      .main-container-print .form-add{
+            display: block;
+      }
+      .main-container-print .form-add input{
+            padding: 7px 10px;
+            width: 260px;
+            margin: 7px;
+            border: 1px solid  black;
+            outline: none;
+      }
+      .main-container-print .form-add button{
+            padding: 7px 10px;
+            font-size: 13px;
+            background: blue;
+            transition: 0.5s;
+      }
+      .main-container-print .form-add button:hover{
+            background: rgb(11, 40, 87);
+      }
+      .main-container-element-btnAdd a{
+            padding: 7px 10px;
+            margin-bottom: -10px;
+      }
+      /* .form{
+            display: block;
+      } */
+      .main-table form{
+            display: block;
+      }
+      .form{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            flex-wrap: wrap;
+      }
+      .box-element{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+       }
+       .box1{
+             height: 100px;
+             width: 60%;
+             margin: 8px;
+       }
+       .box1 h1{
+             font-size: 24px;
+       }
+       .box1 p{
+             font-size: 24px;
+       }
+       .box2{
+             height: 100px;
+             width: 60%;
+             margin: 8px;
+       }
+       .box2 h1{
+             font-size: 24px;
+       }
+       .box2 p{
+             font-size: 24px;
+       }
+       .box3{
+             height: 100px;
+             width: 60%;
+             margin: 8px;
+       }
+       .box3 h1{
+             font-size: 24px;
+       }
+       .box3 p{
+             font-size: 24px;
+       }
+}

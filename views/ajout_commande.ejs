@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Pannel d'administration</title>
+      <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+      <section>
+            <div class="sliderBar">
+                  <div class="slider-title">
+                        <h1>GExpédition</h1>
+                        <span><%= email %></span>
+                  </div>
+                  <hr>
+                  <div class="sliderElement">
+                        <ul>
+                              <li><a href="/interface">Clients</a></li>
+                              <li><a href="/interface/commande" class="active">Commandes</a></li>
+                              <li><a href="#">Expéditions</a></li>
+                              <li><a href="#">Transporteurs</a></li>
+                        </ul>
+                  </div>
+            </div>
+      </section>
+      
+      <section>
+            <div class="main">
+                  <header>
+                        <div class="menu-element">
+                              <div class="menu"></div>
+                              <div class="menu1"></div>
+                        </div>
+                        <div class="btn-group">
+                              <a href="/deconnexion">Déconnexion</a>
+                        </div>
+                  </header>
+                  <div class="main-container">
+                        <div class="main-table">
+                              <form class="form" action="/interface/commande/ajout" method="POST">
+                                    <h3>Nouvelle commande</h3>
+                                    <label for="">Client</label>
+                                    <select name="client" id="">
+                                          <% for(let i=0; i<row.length ; i++){ %>
+                                          <option value="<%= row[i].id %>"><%= row[i].nom %></option>
+                                          <% } %>
+                                    </select>
+                                    <label for="">Staut de commande</label>
+                                    <select name="statut" id="">
+                                          <option value="En attente">En attente</option>
+                                          <option value="En cours">En cours</option>
+                                          <option value="Validée">Validée</option>
+                                          <option value="Annulée">Annulée</option>
+                                    </select>
+                                    <label for="">Date de commande</label>
+                                    <input type="date" name="date_commande" id="" placeholder="Date de livraison" required>
+                                    <label for="">Date de livraison</label>
+                                    <input type="date" name="date_livraison" id="" placeholder="Date de livraison" required>
+                                    <input type="submit" value="Ajouter">
+                              </form>
+                        </div>
+                  </div>
+                
+            </div>
+      </section>
+
+      <script>
+            let slideBar = document.querySelector(".sliderBar")
+            let menuIcon = document.querySelector(".menu")
+            let menuIcon1 = document.querySelector(".menu1")
+            let main = document.querySelector(".main")
+
+            menuIcon.addEventListener("click", function(){
+                  slideBar.classList.toggle("slideActive")
+                  main.classList.toggle("mainResponsive")
+            })
+
+            menuIcon1.addEventListener("click", function(){
+                  slideBar.classList.toggle("slideResponsive")
+            })
+
+            slideBar.addEventListener("click", function(){
+                  slideBar.classList.remove("slideResponsive")
+            })
+      </script>
+</body>
+</html>
